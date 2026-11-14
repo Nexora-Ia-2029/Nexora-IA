@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA AI - Global Advertising</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #07111f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: #0b192b;
+    border-bottom: 1px solid #24354c;
+}
+
+.logo {
+    color: #43c6ff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero span {
+    color: #43c6ff;
+}
+
+.hero p {
+    color: #b8c6d9;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+button {
+    background: #168ed0;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+button:hover {
+    background: #0874b3;
+}
+
+.container {
+    width: 86%;
+    max-width: 1000px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.panel {
+    background: #102139;
+    border: 1px solid #243b58;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+    color: #43c6ff;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border-radius: 6px;
+    border: 1px solid #39516d;
+    background: #071525;
+    color: white;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.result {
+    display: none;
+    background: #0b3046;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0b192b;
+    color: #9aacc1;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEXORA AI</div>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#campanha">Campanhas</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>Publicidade global com <span>Inteligência Artificial</span></h1>
+    <p>
+        Uma nova geração de distribuição de anúncios.
+        Crie campanhas, escolha mercados e prepare
+        a expansão da sua publicidade internacional.
+    </p>
+    <button onclick="document.getElementById('campanha').scrollIntoView({behavior:'smooth'})">
+        Criar campanha
+    </button>
+</section>
+
+<main class="container">
+
+<section class="panel">
+    <h2>O que é a NEXORA AI?</h2>
+    <p>
+        A NEXORA AI é uma plataforma em desenvolvimento
+        para criação, gestão e distribuição internacional
+        de publicidade com inteligência artificial.
+    </p>
+</section>
+
+<section class="panel" id="campanha">
+    <h2>Criar campanha publicitária</h2>
+
+    <label>Nome da campanha</label>
+    <input id="nome" placeholder="Ex: Campanha internacional">
+
+    <label>Produto ou serviço</label>
+    <input id="produto" placeholder="O que pretende divulgar?">
+
+    <label>País de destino</label>
+    <select id="pais">
+        <option value="">Escolher país</option>
+        <option>Luxemburgo</option>
+        <option>Suíça</option>
+        <option>Noruega</option>
+        <option>Dinamarca</option>
+        <option>Irlanda</option>
+        <option>Alemanha</option>
+        <option>Países Baixos</option>
+        <option>Estados Unidos</option>
+        <option>Canadá</option>
+        <option>Singapura</option>
+        <option>Japão</option>
+        <option>Emirados Árabes Unidos</option>
+    </select>
+
+    <label>Descrição do anúncio</label>
+    <textarea id="descricao" placeholder="Descreva o seu anúncio..."></textarea>
+
+    <label>Idioma da campanha</label>
+    <select id="idioma">
+        <option>Português</option>
+        <option>Inglês</option>
+        <option>Francês</option>
+        <option>Alemão</option>
+        <option>Espanhol</option>
+        <option>Árabe</option>
+        <option>Japonês</option>
+    </select>
+
+    <button onclick="criarCampanha()">Preparar campanha</button>
+
+    <div class="result" id="resultado"></div>
+</section>
+
+<section class="panel">
+    <h2>Visão internacional</h2>
+    <p>
+        • Gestão de campanhas publicitárias.<br><br>
+        • Mercados internacionais.<br><br>
+        • Suporte a vários idiomas.<br><br>
+        • Preparação para distribuição multicanal.<br><br>
+        • Inteligência artificial para publicidade.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    NEXORA AI © 2026 — Global Advertising Platform
+</footer>
+
+<script>
+function criarCampanha() {
+    const nome = document.getElementById("nome").value;
+    const produto = document.getElementById("produto").value;
+    const pais = document.getElementById("pais").value;
+    const descricao = document.getElementById("descricao").value;
+    const idioma = document.getElementById("idioma").value;
+
+    if (!nome || !produto || !pais || !descricao) {
+        alert("Preencha todos os campos.");
+        return;
+    }
+
+    const resultado = document.getElementById("resultado");
+
+    resultado.style.display = "block";
+
+    resultado.innerHTML =
+        "<h3>Campanha preparada!</h3>" +
+        "<p><b>Nome:</b> " + nome + "</p>" +
+        "<p><b>Produto:</b> " + produto + "</p>" +
+        "<p><b>País:</b> " + pais + "</p>" +
+        "<p><b>Idioma:</b> " + idioma + "</p>" +
+        "<p><b>Descrição:</b> " + descricao + "</p>" +
+        "<p>Esta é uma demonstração. A distribuição real ainda não está conectada.</p>";
+}
+</script>
+
+</body>
+</html>
